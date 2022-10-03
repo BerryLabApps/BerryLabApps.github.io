@@ -1,4 +1,4 @@
-oogle.com, pub-9490889481800850, DIRECT, f08c47fec0942fa0
+google.com, pub-9490889481800850, DIRECT, f08c47fec0942fa0
 google.com, pub-3940256099942544, DIRECT, f08c47fec0942fa0
 indexexchange.com, 191332, RESELLER
 contextweb.com, 562499, RESELLER
