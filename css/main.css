@@ -1585,7 +1585,7 @@ article:last-child {
 
 /* Image */
 
-.image:hover {
+.image.clickable:hover {
 	opacity: 0.9;
 }
 
