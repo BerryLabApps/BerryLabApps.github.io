@@ -1,84 +1,162 @@
-<!DOCTYPE HTML>
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
-	<title>BerryLab</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link href="/css/main.css" media="screen" rel="stylesheet" type="text/css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BerryLab — games that bring people together</title>
+  <meta name="title-en" content="BerryLab — games that bring people together">
+  <meta name="title-ru" content="BerryLab — игры, которые собирают вместе">
+  <meta name="description" content="BerryLab makes party games you play together on one phone: Alias, Hat Game and Quiz Battle.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site.js"></script>
 </head>
+<body>
 
-<body class="no-sidebar is-preload">
-	<div id="page-wrapper">
+<header class="wrap top">
+  <a class="brand" href="index.html" aria-label="BerryLab">
+    <img class="brand__mark" src="assets/favicon.svg" alt="" width="36" height="36">
+    <img class="brand__word" src="assets/img/berrylab-logo.webp" alt="BerryLab" width="170" height="30">
+  </a>
+  <nav class="lang" aria-label="Language">
+    <button type="button" data-set-lang="en">EN</button>
+    <button type="button" data-set-lang="ru">RU</button>
+  </nav>
+</header>
 
-		<!-- Header -->
-		<section id="header">
-			<div class="container">
+<main class="wrap">
 
-				<!-- Logo -->
-				<h1 id="logo">BerryLab</h1>
-				<p>We create apps for you!</p>
+  <section class="hero">
+    <p class="eyebrow"><span lang="en">Independent game studio</span><span lang="ru">Независимая игровая студия</span></p>
+    <h1>
+      <span lang="en">Games that bring people together</span>
+      <span lang="ru">Игры, которые собирают вместе</span>
+    </h1>
+    <p class="lede">
+      <span lang="en">We make games with attention to detail.</span>
+      <span lang="ru">Делаем игры с вниманием к деталям.</span>
+    </p>
+  </section>
 
-			</div>
-		</section>
+  <section class="apps">
 
-		<section id="main">
-			<div class="container">
-				<div id="content">
+    <article class="app app--alias" id="alias">
+      <div class="app__media">
+        <img src="assets/img/alias-banner.webp" alt="" width="1024" height="500">
+      </div>
+      <div class="app__body">
+        <div class="app__head">
+          <img class="app__icon" src="assets/img/alias-icon.webp" alt="" width="56" height="56">
+          <div>
+            <h2>Alias</h2>
+            <p class="tagline"><span lang="en">Give clues and guess words in a team game of speed and smarts!</span><span lang="ru">Объясняй и угадывай слова в командной игре на скорость и смекалку!</span></p>
+          </div>
+        </div>
+        <p class="desc">
+          <span lang="en">Get your friends together! Split into teams and see who’s best at giving clues and guessing words. The clock is ticking, so every word counts! Word packs for everyone! Easy words for beginners. Tricky concepts for experts. Choose the difficulty level and themes that suit your group.</span>
+          <span lang="ru">Соберите друзей! Разделитесь на команды и проверьте, кто лучше всех умеет объяснять и угадывать слова. Время ограничено, поэтому каждое слово на счету! Словари на любой вкус! Простые слова — для новичков. Хитрые понятия — для знатоков. Выбирайте уровень сложности и темы, подходящие именно вашей компании.</span>
+        </p>
+        <ul class="facts">
+          <li><span lang="en">2+ teams</span><span lang="ru">от 2 команд</span></li>
+          <li><span lang="en">Word packs in 6 languages</span><span lang="ru">Словари на 6 языках</span></li>
+          <li><span lang="en">5M+ installs</span><span lang="ru">5 млн+ установок</span></li>
+        </ul>
+        <div class="stores">
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.greylab.alias">
+            <img class="store__logo store__logo--play" src="assets/img/stores/google-play.svg" alt="" width="24" height="24">
+            <span class="store__text"><small><span lang="en">Available on</span><span lang="ru">Доступно в</span></small>Google Play</span>
+          </a>
+          <a class="store" href="https://apps.apple.com/us/app/alias-party-game/id1163843973">
+            <img class="store__logo" src="assets/img/stores/apple.svg" alt="" width="24" height="24">
+            <span class="store__text"><small><span lang="en">Available on</span><span lang="ru">Доступно в</span></small>App Store</span>
+          </a>
+        </div>
+      </div>
+    </article>
 
-					<!-- Alias -->
-					<article class="box post">
-						<header>
-							<h2><strong>Alias</strong> is an engaging team game for a <strong>bunch of friends</strong> also known as Taboo.</h2>
-						</header>
-						<span class="image featured"><img src="images/alias_background_splash.png" alt="" /></span>
-						<h3>And yeah, that's basically it</h3>
-						<p>The player's goal is to explain as many words as possible to each other before the time runs out.</p>
+    <article class="app app--hat" id="hat">
+      <div class="app__media">
+        <img lang="en" src="assets/img/hat-banner-en.webp" alt="" width="1024" height="500" loading="lazy">
+        <img lang="ru" src="assets/img/hat-banner-ru.webp" alt="" width="1024" height="500" loading="lazy">
+      </div>
+      <div class="app__body">
+        <div class="app__head">
+          <img class="app__icon" src="assets/img/hat-icon.webp" alt="" width="56" height="56">
+          <div>
+            <h2><span lang="en">Hat Game</span><span lang="ru">Шляпа</span></h2>
+            <p class="tagline"><span lang="en">Give clues and guess words against the clock, with new rules every round</span><span lang="ru">Объясняй и отгадывай слова на время — в каждом раунде по новым правилам</span></p>
+          </div>
+        </div>
+        <p class="desc">
+          <span lang="en">One hat. Familiar words. A new way to give clues every round. Hat Game is a party word game. Get your friends, family, or coworkers together—you can play with just two people or a bigger group. All you need is one phone.</span>
+          <span lang="ru">Одна шляпа. Знакомые слова. И каждый раз — новый способ их объяснить. «Шляпа» — игра в слова для компании. Собирай друзей, семью или коллег: играть можно вдвоём или большим составом. Нужен только один телефон.</span>
+        </p>
+        <ul class="facts">
+          <li><span lang="en">2–10 players or teams</span><span lang="ru">2–10 игроков или команд</span></li>
+          <li><span lang="en">4 round types</span><span lang="ru">4 вида раундов</span></li>
+          <li><span lang="en">Thousands of words and your own packs</span><span lang="ru">Тысячи слов и свои словари</span></li>
+        </ul>
+        <div class="stores">
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.berrylab.hatgame">
+            <img class="store__logo store__logo--play" src="assets/img/stores/google-play.svg" alt="" width="24" height="24">
+            <span class="store__text"><small><span lang="en">Available on</span><span lang="ru">Доступно в</span></small>Google Play</span>
+          </a>
+          <span class="store store--soon">
+            <img class="store__logo" src="assets/img/stores/apple.svg" alt="" width="24" height="24">
+            <span class="store__text"><small><span lang="en">Coming soon to</span><span lang="ru">Скоро в</span></small>App Store</span>
+          </span>
+        </div>
+      </div>
+    </article>
 
-						<p>GATHER YOUR FRIENDS! Split into teams with at least two players each.</p>
+    <article class="app app--quiz" id="quizbattle">
+      <div class="app__media">
+        <img src="assets/img/quizbattle-banner.webp" alt="" width="1024" height="500" loading="lazy">
+      </div>
+      <div class="app__body">
+        <div class="app__head">
+          <img class="app__icon" src="assets/img/quizbattle-icon.webp" alt="" width="56" height="56">
+          <div>
+            <h2>Quiz Battle</h2>
+            <p class="tagline"><span lang="en">A competitive game of speed and knowledge for 2–4 players</span><span lang="ru">Соревнование на скорость реакции и эрудицию для 2–4 человек</span></p>
+          </div>
+        </div>
+        <p class="desc">
+          <span lang="en">Be the first to decide whether the statement on screen is true or false. A right answer earns points; a wrong one costs you. Set the difficulty and pick the game modes to suit any group.</span>
+          <span lang="ru">Задача каждого — быстрее остальных определить, верно ли утверждение на экране. Правильный ответ приносит очки, ошибка их отнимает. Сложность и игровые режимы настраиваются под любую компанию.</span>
+        </p>
+        <ul class="facts">
+          <li><span lang="en">2–4 players</span><span lang="ru">2–4 игрока</span></li>
+          <li><span lang="en">8 game modes</span><span lang="ru">8 режимов игры</span></li>
+          <li><span lang="en">Difficulty levels</span><span lang="ru">Уровни сложности</span></li>
+        </ul>
+        <div class="stores">
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.berrylab.quizbattle">
+            <img class="store__logo store__logo--play" src="assets/img/stores/google-play.svg" alt="" width="24" height="24">
+            <span class="store__text"><small><span lang="en">Available on</span><span lang="ru">Доступно в</span></small>Google Play</span>
+          </a>
+        </div>
+      </div>
+    </article>
 
-						<p>CHOOSE YOUR CATEGORY! Different themes and difficulty levels will suit any team.</p>
+  </section>
+</main>
 
-						<p>SCORE POINTS! Guess the words correctly and score points.</p>
+<footer class="foot">
+  <div class="wrap">
+    <span>© 2026 BerryLab · <span lang="en">Support:</span><span lang="ru">Поддержка:</span> <a href="mailto:berrylab.app@gmail.com">berrylab.app@gmail.com</a></span>
+    <nav aria-label="Privacy">
+      <a href="alias/privacy/index.html"><span lang="en">Alias privacy</span><span lang="ru">Конфиденциальность Alias</span></a>
+      <a href="aliaspremium/privacy/index.html"><span lang="en">Alias Premium privacy</span><span lang="ru">Конфиденциальность Alias Premium</span></a>
+      <a href="hatgame/privacy/index.html"><span lang="en">Hat Game privacy</span><span lang="ru">Конфиденциальность Шляпы</span></a>
+      <a href="quizbattle/privacy/index.html"><span lang="en">Quiz Battle privacy</span><span lang="ru">Конфиденциальность Quiz Battle</span></a>
+    </nav>
+  </div>
+</footer>
 
-						<p>BECOME THE WINNER! The first team to reach the victory score is crowned the winner!</p>
-						
-						<p>Support email: aliasberrylab@gmail.com</p>
-						<br>
-					</article>
-				</div>
-				<a href='https://play.google.com/store/apps/details?id=com.greylab.alias'>
-					<img class="clickable" alt='Get it on Google Play' src='images/google_play_badge.png' /></a>
-				<a href='https://apps.apple.com/us/app/alias-party-game/id1163843973'>
-					<img class="clickable" alt='Download on the App Store' src='images/app_store_badge.png' /></a>
-			</div>
-			<br>
-			<br>
-			<br>
-			<div class="container">
-				<div id="content">
-
-					<!-- Quiz Battle -->
-					<article class="box post">
-						<header>
-							<h2><strong>Quiz Battle</strong> is an engaging game for any <strong>party</strong>.</h2>
-						</header>
-						<span class="image featured"><img src="images/quiz_battle_background_splash.jpg" alt="" /></span>
-
-						<p>A competitive game testing your speed and knowledge, suitable for 2-4 players. All on the same device!</p>
-
-						<p>Challenge your friends to a battle of wits, those with the fastest reflexes will win. Play your own game by choosing the difficulty level and game modes.</p>
-
-						<p>Outwit and outplay your opponents!</p>
-
-						<p>Support email: berrylabapps@gmail.com</p>
-						<br>
-					</article>
-				</div>
-				<a href='https://play.google.com/store/apps/details?id=com.berrylab.quizbattle'>
-					<img class="clickable" alt='Get it on Google Play' src='images/google_play_badge.png' /></a>
-			</div>
-		</section>
-	</div>
 </body>
 </html>
