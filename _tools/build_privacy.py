@@ -18,6 +18,10 @@ APPLOVIN = {"en": "AppLovin", "ru": "AppLovin",
             "link": ("AppLovin", "AppLovin", "https://legal.applovin.com/privacy/", "https://legal.applovin.com/privacy/")}
 UNITY_ADS = {"en": "Unity Ads", "ru": "Unity Ads",
              "link": ("Unity", "Unity", "https://unity.com/legal/game-player-and-app-user-privacy-policy", "https://unity.com/legal/game-player-and-app-user-privacy-policy")}
+LIFTOFF = {"en": "Liftoff (Vungle)", "ru": "Liftoff (Vungle)",
+           "link": ("Liftoff", "Liftoff", "https://liftoff.ai/privacy-policy/", "https://liftoff.ai/privacy-policy/")}
+DIGITAL_TURBINE = {"en": "Digital Turbine", "ru": "Digital Turbine",
+                   "link": ("Digital Turbine", "Digital Turbine", "https://www.digitalturbine.com/legal/privacy-policy", "https://www.digitalturbine.com/legal/privacy-policy")}
 
 LOCAL_ONLY_EN = "Game data, including everything you type, is stored only on your device and is not sent to us or anyone else."
 LOCAL_ONLY_RU = "Данные игры, включая всё, что вы вводите, хранятся только на устройстве и не передаются ни нам, ни кому-либо ещё."
@@ -53,6 +57,17 @@ APPS = [
         "intro_en": "Alias Premium for iOS (“the app”) is developed by BerryLab.",
         "intro_ru": "Игру Alias Premium для iOS (далее — приложение) разрабатывает BerryLab.",
         "collects": False,
+    },
+    {
+        "slug": "pairs", "icon": "pairs-icon.webp", "name_en": "Pairs", "name_ru": "Пары",
+        "intro_en": "Pairs: English Words for Android and iOS (“the app”) is developed by BerryLab.",
+        "intro_ru": "Приложение «Пары: английские слова» для Android и iOS (далее — приложение) разрабатывает BerryLab.",
+        "usage_en": "screens opened, rounds played with their settings and results (pairs matched, mistakes, words learned, duration), actions with your dictionaries — without their words, translations or names — and, on iPhone and iPad, your answer to the tracking request.",
+        "usage_ru": "открытые экраны, раунды с их настройками и результатами (собранные пары, ошибки, выученные слова, длительность), действия с вашими словарями — без их слов, переводов и названий — и, на iPhone и iPad, ваш ответ на запрос об отслеживании.",
+        "local_en": "Dictionaries, words and translations, including everything you type, and your progress on each word are stored on your device and, if backup is turned on in your device settings, in your own backup: in your Google account on Android, in iCloud or on your computer on iPhone and iPad. They are not sent to us or to the services listed below. The app reads the clipboard only when you choose to import from it.",
+        "local_ru": "Словари, слова и переводы, включая всё, что вы вводите, и ваш прогресс по каждому слову хранятся на устройстве и, если в его настройках включено резервное копирование, в вашей собственной резервной копии: в аккаунте Google на Android, в iCloud или на компьютере на iPhone и iPad. Ни нам, ни сервисам, перечисленным ниже, они не передаются. Буфер обмена приложение читает, только когда вы сами выбираете импорт из него.",
+        "remote_config": False, "consent": False, "ios": True, "idfv": True,
+        "ad_partners": [ADMOB, APPLOVIN, MINTEGRAL, LIFTOFF, DIGITAL_TURBINE],
     },
 ]
 
@@ -116,10 +131,12 @@ def english(app):
     if not app.get("collects", True):
         return english_no_data(app)
     ad_id = "advertising ID (on iPhone and iPad the IDFA, only if you allow tracking)" if app["ios"] else "advertising ID"
+    device_ids = f"{ad_id}, app set ID (on Android), identifier for vendor (IDFV, on iPhone and iPad)" if app.get("idfv") else f"{ad_id}, app set ID"
+    usage = app.get("usage_en", "screens opened, games played and their settings.")
     collected = [
-        "<b>Game usage:</b> screens opened, games played and their settings.",
+        f"<b>Game usage:</b> {usage}",
         "<b>Device and app information:</b> device model, OS and app version, language and region.",
-        f"<b>Identifiers:</b> app instance and installation IDs, {ad_id}, app set ID.",
+        f"<b>Identifiers:</b> app instance and installation IDs, {device_ids}.",
         "<b>IP address</b> and the approximate location derived from it.",
         "<b>Crash and error reports.</b>",
         "<b>Interactions with ads.</b>",
@@ -200,10 +217,13 @@ def russian(app):
     if not app.get("collects", True):
         return russian_no_data(app)
     ad_id = "рекламный идентификатор (на iPhone и iPad — IDFA, только если вы разрешили отслеживание)" if app["ios"] else "рекламный идентификатор"
+    device_ids = (f"{ad_id}, идентификатор набора приложений (app set ID, на Android), идентификатор поставщика (IDFV, на iPhone и iPad)" if app.get("idfv")
+                  else f"{ad_id}, идентификатор набора приложений (app set ID)")
+    usage = app.get("usage_ru", "открытые экраны, партии и их настройки.")
     collected = [
-        "<b>Использование игры:</b> открытые экраны, партии и их настройки.",
+        f"<b>Использование игры:</b> {usage}",
         "<b>Сведения об устройстве и приложении:</b> модель устройства, версии ОС и приложения, язык и регион.",
-        f"<b>Идентификаторы:</b> идентификаторы экземпляра приложения и установки, {ad_id}, идентификатор набора приложений (app set ID).",
+        f"<b>Идентификаторы:</b> идентификаторы экземпляра приложения и установки, {device_ids}.",
         "<b>IP-адрес</b> и примерное местоположение по нему.",
         "<b>Отчёты о сбоях и ошибках.</b>",
         "<b>Взаимодействие с рекламой.</b>",
