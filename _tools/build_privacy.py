@@ -54,6 +54,14 @@ APPS = [
         "intro_ru": "Игру Alias Premium для iOS (далее — приложение) разрабатывает BerryLab.",
         "collects": False,
     },
+    {
+        "slug": "pairs", "icon": "pairs-icon.webp", "name_en": "Pairs", "name_ru": "Пары",
+        "intro_en": "Pairs (“the app”) is developed by BerryLab.",
+        "intro_ru": "Игру «Пары» (далее — приложение) разрабатывает BerryLab.",
+        "local_en": LOCAL_ONLY_EN, "local_ru": LOCAL_ONLY_RU,
+        "remote_config": True, "consent": True, "ios": False,
+        "ad_partners": [ADMOB, MINTEGRAL, APPLOVIN],
+    },
 ]
 
 
