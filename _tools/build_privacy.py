@@ -21,13 +21,18 @@ UNITY_ADS = {"en": "Unity Ads", "ru": "Unity Ads",
 
 LOCAL_ONLY_EN = "Game data, including everything you type, is stored only on your device and is not sent to us or anyone else."
 LOCAL_ONLY_RU = "Данные игры, включая всё, что вы вводите, хранятся только на устройстве и не передаются ни нам, ни кому-либо ещё."
+ANDROID_BACKUP_EN = "Game data, including everything you type, is stored on your device and is not sent to us. If Android backup is turned on, Android may also keep it in your own encrypted Google backup so it can be restored on a new device."
+ANDROID_BACKUP_RU = "Данные игры, включая всё, что вы вводите, хранятся на устройстве и не передаются нам. Если включено резервное копирование Android, система может также сохранить их в вашей зашифрованной резервной копии в аккаунте Google, чтобы восстановить на новом устройстве."
+ANDROID_BACKUP_KEEP_EN = "In your Android backup, if it is turned on: in your Google Account, under Google’s rules."
+ANDROID_BACKUP_KEEP_RU = "В резервной копии Android, если она включена, — в вашем аккаунте Google, по правилам Google."
 
 APPS = [
     {
         "slug": "hatgame", "icon": "hat-icon.webp", "name_en": "Hat Game", "name_ru": "Шляпа",
         "intro_en": "Hat Game (“the app”) is developed by BerryLab.",
         "intro_ru": "Игру «Шляпа» (далее — приложение) разрабатывает BerryLab.",
-        "local_en": LOCAL_ONLY_EN, "local_ru": LOCAL_ONLY_RU,
+        "local_en": ANDROID_BACKUP_EN, "local_ru": ANDROID_BACKUP_RU,
+        "backup_keep_en": ANDROID_BACKUP_KEEP_EN, "backup_keep_ru": ANDROID_BACKUP_KEEP_RU,
         "remote_config": True, "consent": True, "ios": False,
         "ad_partners": [ADMOB, MINTEGRAL, APPLOVIN],
     },
@@ -35,7 +40,10 @@ APPS = [
         "slug": "alias", "icon": "alias-icon.webp", "name_en": "Alias", "name_ru": "Alias",
         "intro_en": "Alias for Android and iOS (“the app”) is developed by BerryLab.",
         "intro_ru": "Игру Alias для Android и iOS (далее — приложение) разрабатывает BerryLab.",
-        "local_en": LOCAL_ONLY_EN, "local_ru": LOCAL_ONLY_RU,
+        "local_en": "Game data, including everything you type, is stored on your device and is not sent to us. If backup is turned on, the system may also keep it in your own encrypted backup so it can be restored on a new device: in your Google Account on Android, in iCloud on iPhone and iPad.",
+        "local_ru": "Данные игры, включая всё, что вы вводите, хранятся на устройстве и не передаются нам. Если включено резервное копирование, система может также сохранить их в вашей зашифрованной резервной копии, чтобы восстановить на новом устройстве: в аккаунте Google на Android, в iCloud на iPhone и iPad.",
+        "backup_keep_en": "In your backup, if it is turned on: in your Google Account or iCloud, under Google’s or Apple’s rules.",
+        "backup_keep_ru": "В резервной копии, если она включена, — в вашем аккаунте Google или iCloud, по правилам Google или Apple.",
         "remote_config": True, "consent": False, "ios": True,
         "ad_partners": [ADMOB, MINTEGRAL, APPLOVIN, UNITY_ADS],
     },
@@ -43,8 +51,8 @@ APPS = [
         "slug": "quizbattle", "icon": "quizbattle-icon.webp", "name_en": "Quiz Battle", "name_ru": "Quiz Battle",
         "intro_en": "Quiz Battle (“the app”) is developed by BerryLab.",
         "intro_ru": "Игру Quiz Battle (далее — приложение) разрабатывает BerryLab.",
-        "local_en": "Game data is stored on your device and, if backup is turned on in your device settings, in your own Android backup in your Google account. It is not sent to us.",
-        "local_ru": "Данные игры хранятся на устройстве и, если в его настройках включено резервное копирование, в вашей собственной резервной копии Android в аккаунте Google. Нам они не передаются.",
+        "local_en": "Game data is stored only on your device and is not sent to us or anyone else.",
+        "local_ru": "Данные игры хранятся только на устройстве и не передаются ни нам, ни кому-либо ещё.",
         "remote_config": False, "consent": False, "ios": False,
         "ad_partners": [ADMOB, MINTEGRAL, APPLOVIN],
     },
@@ -58,7 +66,8 @@ APPS = [
         "slug": "pairs", "icon": "pairs-icon.webp", "name_en": "Pairs", "name_ru": "Пары",
         "intro_en": "Pairs (“the app”) is developed by BerryLab.",
         "intro_ru": "Игру «Пары» (далее — приложение) разрабатывает BerryLab.",
-        "local_en": LOCAL_ONLY_EN, "local_ru": LOCAL_ONLY_RU,
+        "local_en": ANDROID_BACKUP_EN, "local_ru": ANDROID_BACKUP_RU,
+        "backup_keep_en": ANDROID_BACKUP_KEEP_EN, "backup_keep_ru": ANDROID_BACKUP_KEEP_RU,
         "remote_config": True, "consent": True, "ios": False,
         "ad_partners": [ADMOB, MINTEGRAL, APPLOVIN],
     },
@@ -150,7 +159,7 @@ def english(app):
         options.append("<p>In the EEA, UK and Switzerland, the app shows Google’s consent form when you first open it. You can change your choice at any time in the app’s settings.</p>")
     if app["ios"]:
         options.append("<p>On iPhone and iPad, the app asks your permission before your activity may be tracked across other companies’ apps and websites. You can change this in Settings → Privacy &amp; Security → Tracking.</p>")
-    keep = ["On your device: until you uninstall the app or clear its data.", "Google Analytics for Firebase: up to 14 months.", "Crashlytics: 90 days.",
+    keep = ["On your device: until you uninstall the app or clear its data.", *([app["backup_keep_en"]] if "backup_keep_en" in app else []), "Google Analytics for Firebase: up to 14 months.", "Crashlytics: 90 days.",
             "Other services: as set out in their policies."]
     return f"""
 <section lang="en">
@@ -234,7 +243,7 @@ def russian(app):
         options.append("<p>В Европейской экономической зоне, Великобритании и Швейцарии при первом запуске приложение показывает форму согласия Google. Изменить выбор можно в любой момент в настройках приложения.</p>")
     if app["ios"]:
         options.append("<p>На iPhone и iPad приложение спрашивает разрешение, прежде чем ваши действия могут отслеживаться в приложениях и на сайтах других компаний. Изменить его можно в «Настройки» → «Конфиденциальность и безопасность» → «Отслеживание».</p>")
-    keep = ["На устройстве — пока вы не удалите приложение или его данные.", "Google Analytics for Firebase — не дольше 14 месяцев.", "Crashlytics — 90 дней.",
+    keep = ["На устройстве — пока вы не удалите приложение или его данные.", *([app["backup_keep_ru"]] if "backup_keep_ru" in app else []), "Google Analytics for Firebase — не дольше 14 месяцев.", "Crashlytics — 90 дней.",
             "Остальные сервисы — по их политикам."]
     return f"""
 <section lang="ru">
