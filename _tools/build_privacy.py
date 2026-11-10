@@ -44,7 +44,7 @@ APPS = [
         "local_ru": "Данные игры, включая всё, что вы вводите, хранятся на устройстве и не передаются нам. Если включено резервное копирование, система может также сохранить их в вашей зашифрованной резервной копии, чтобы восстановить на новом устройстве: в аккаунте Google на Android, в iCloud на iPhone и iPad.",
         "backup_keep_en": "In your backup, if it is turned on: in your Google Account or iCloud, under Google’s or Apple’s rules.",
         "backup_keep_ru": "В резервной копии, если она включена, — в вашем аккаунте Google или iCloud, по правилам Google или Apple.",
-        "remote_config": True, "consent": False, "ios": True,
+        "remote_config": True, "consent": True, "ios": True,
         "ad_partners": [ADMOB, MINTEGRAL, APPLOVIN, UNITY_ADS],
     },
     {
@@ -53,7 +53,7 @@ APPS = [
         "intro_ru": "Игру Quiz Battle (далее — приложение) разрабатывает BerryLab.",
         "local_en": "Game data is stored only on your device and is not sent to us or anyone else.",
         "local_ru": "Данные игры хранятся только на устройстве и не передаются ни нам, ни кому-либо ещё.",
-        "remote_config": False, "consent": False, "ios": False,
+        "remote_config": False, "consent": True, "ios": False,
         "ad_partners": [ADMOB, MINTEGRAL, APPLOVIN],
     },
     {
