@@ -16,8 +16,6 @@ MINTEGRAL = {"en": "Mintegral", "ru": "Mintegral",
              "link": ("Mintegral", "Mintegral", "https://www.mintegral.com/en/privacy", "https://www.mintegral.com/en/privacy")}
 APPLOVIN = {"en": "AppLovin", "ru": "AppLovin",
             "link": ("AppLovin", "AppLovin", "https://legal.applovin.com/privacy/", "https://legal.applovin.com/privacy/")}
-UNITY_ADS = {"en": "Unity Ads", "ru": "Unity Ads",
-             "link": ("Unity", "Unity", "https://unity.com/legal/game-player-and-app-user-privacy-policy", "https://unity.com/legal/game-player-and-app-user-privacy-policy")}
 
 LOCAL_ONLY_EN = "Game data, including everything you type, is stored only on your device and is not sent to us or anyone else."
 LOCAL_ONLY_RU = "Данные игры, включая всё, что вы вводите, хранятся только на устройстве и не передаются ни нам, ни кому-либо ещё."
@@ -45,7 +43,7 @@ APPS = [
         "backup_keep_en": "In your backup, if it is turned on: in your Google Account or iCloud, under Google’s or Apple’s rules.",
         "backup_keep_ru": "В резервной копии, если она включена, — в вашем аккаунте Google или iCloud, по правилам Google или Apple.",
         "remote_config": True, "consent": True, "ios": True,
-        "ad_partners": [ADMOB, MINTEGRAL, APPLOVIN, UNITY_ADS],
+        "ad_partners": [ADMOB, MINTEGRAL, APPLOVIN],
     },
     {
         "slug": "quizbattle", "icon": "quizbattle-icon.webp", "name_en": "Quiz Battle", "name_ru": "Quiz Battle",
